@@ -256,7 +256,6 @@ var prefix = "*" // برفكس حقك هني
         .addField("*cat",' صورة قطوة ')
         .addField("*bc ",' برودكاست ')
         .addField("*say",' يكرر كلامك با��بوت ')
-        .addField("*ly",' يطلعلك كلمات الاغنيه ')
         .addField("*clear",' يمسح الشات ')
         .addField("*invite",' يعطيك رابط البوت ')
         .addField("*id",' يطلعلك ايديك ')
