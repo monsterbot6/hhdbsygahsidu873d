@@ -929,99 +929,48 @@ client.on('message', message => {
 });
 
 
-
-
-
-
-
-client.on('message', async msg => {
-  if(msg.content.startsWith('*servers')) {
-    let output = '**Servers**\n';
-    client.guilds.forEach(guild => {
-      output += `**Name**: ${guild.name}, **ID**: ${guild.id}, **MembersCount**: ${guild.memberCount}, **Owner**: ${guild.owner}`;
-    });
-    msg.channel.send(output);
-  }
-});
- 
-
-var prefix = "*";
-var adminprefix = '*'
-const developers = ["343746103922917376"]
 client.on('message', message => {
-    var argresult = message.content.split(`).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
+              if(!message.channel.guild) return;
+    var prefix = "*";
+    if(message.content.startsWith(prefix + 'bc')) {
+    if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
+    let copy = "alpha codes";
+    let request = `Requested By ${message.author.username}`;
+    if (!args) return message.reply('```**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**```');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
+    msg.react('✅')
+    .then(() => msg.react('❌'))
+    .then(() =>msg.react('✅'))
 
-  if (message.content.startsWith(adminprefix + 'setg')) {
-    client.user.setGame(argresult);
-      message.channel.send(تم التغيير   ${argresult})
-  } else
-     if (message.content === (adminprefix + "leave")) {
-    message.guild.leave();
-  } else
-  if (message.content.startsWith(adminprefix + 'setw')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(تم التغيير   ${argresult})
-  } else
-  if (message.content.startsWith(adminprefix + 'setl')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(تم التغيير   ${argresult})
-  } else
-  if (message.content.startsWith(adminprefix + 'sets')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/One");
-      message.channel.send(تم التغيير)
-  }
-  if (message.content.startsWith(adminprefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(Changing The Name To ..${argresult} )
-} else
-if (message.content.startsWith(adminprefix + 'setavatar')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(Changing The Avatar To :${argresult}** `);
-}
-});
+    let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
+    let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
 
-
-client.on('message', message => {
-   let embed = new Discord.RichEmbed()
-
-    let args = message.content.split(' ').slice(1).join(' ');
-     if(!message.channel.guild) return;
-if(message.content.split(' ')[0] == '*bc') {
-         message.react("✔")
-          let embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .setThumbnail(message.author.avatarURL)   
- .addField('تم الارسال بواسطة :', "<@" + message.author.id + ">")
-                 message.channel.sendEmbed(embed);
-        message.guild.members.forEach(m => {
-            var bc = new Discord.RichEmbed()
-.addField('**● Sender  :**', `*** → ${message.author.username}#${message.author.discriminator}***`)
-.addField('***● Server  :***', `*** → ${message.guild.name}***`)  
-.setThumbnail(message.author.avatarURL)                
-    .setColor('RANDOM')
-                 .addField('ّ', args)
-            m.send(``,{embed: bc});
-        });
+    let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
+    let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
+    reaction1.on("collect", r => {
+    message.channel.send(`☑ | Done ... The Broadcast Message Has Been Sent For ${message.guild.members.size} Members`).then(m => m.delete(5000));
+    message.guild.members.forEach(m => {
+    var bc = new
+       Discord.RichEmbed()
+       .setColor('RANDOM')
+       .setTitle('Broadcast')
+       .addField('Server', message.guild.name)
+       .addField('Sender', message.author.username)
+       .addField('Message', args)
+       .setThumbnail(message.author.avatarURL)
+       .setFooter(copy, client.user.avatarURL);
+    m.send({ embed: bc })
+    msg.delete();
+    })
+    })
+    reaction2.on("collect", r => {
+    message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
+    msg.delete();
+    })
+    })
     }
-})
-
-
-client.on('message', message => {
-         if (message.content === "*helpset") {
-         let embed = new Discord.RichEmbed()
-    .setThumbnail(message.author.avatarURL)
-    .addField('     +leave ' , 'لخروج البوت من السيرفر')
-    .addField('     +sets ' , 'streaming')
-    .addField('     +setw ' , 'watching')
-    .addField('     +set1 ' , 'listening')
-    .addField('     +setg ' , 'playing')
-    .addField('     +setname ' , 'change the name')
-    .addField('     +setavatar ' , 'change the avatar')
-    .setColor('RANDOM')
-      message.channel.sendEmbed(embed);
-        }
-})
+    });
 
 
 client.login(process.env.BOT_TOKEN);
