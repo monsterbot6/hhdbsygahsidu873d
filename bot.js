@@ -256,10 +256,10 @@ channel.send({embed : embed});
 
  
 client.on("guildMemberAdd", (member) => {/////////////otozx_
-client.channels.get('528645296167845912').edit({name : `『  MEMBERS ➡ ${member.guild.memberCount} 』`});
+client.channels.get('530038023312769044').edit({name : `『  MEMBERS ➡ ${member.guild.memberCount} 』`});
 })////////////Otozx_
 client.on("guildMemberRemove", (member) => {
-client.channels.get('528645296167845912').edit({name : `『  MEMBERS ➡ ${member.guild.memberCount} 』`});
+client.channels.get('530038023312769044').edit({name : `『  MEMBERS ➡ ${member.guild.memberCount} 』`});
 })/////////////Otozx_
 
 
