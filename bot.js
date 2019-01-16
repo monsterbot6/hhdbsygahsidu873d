@@ -2,6 +2,27 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '535144614487654401').setName("W");
+client.channels.find('id', '535144614487654401').setName("We");
+client.channels.find('id', '535144614487654401').setName("Wel");
+client.channels.find('id', '535144614487654401').setName("Welc");
+client.channels.find('id', '535144614487654401').setName("Welco");
+client.channels.find('id', '535144614487654401').setName("Welcom");
+client.channels.find('id', '535144614487654401').setName("Welcome");
+client.channels.find('id', '535144614487654401').setName("Welcome T");
+client.channels.find('id', '535144614487654401').setName("Welcome To");
+client.channels.find('id', '535144614487654401').setName("Welcome To S");
+client.channels.find('id', '535144614487654401').setName("Welcome To Se");
+client.channels.find('id', '535144614487654401').setName("Welcome To Ser");
+client.channels.find('id', '535144614487654401').setName("Welcome To Serv");
+client.channels.find('id', '535144614487654401').setName("Welcome To Serve");
+client.channels.find('id', '535144614487654401').setName("Welcome To Server");
+  }, 60000);
+});
+
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`M0nsters Bot Online ♥♥ *invite `,"https://www.twitch.tv/rashed1059")
