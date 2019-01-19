@@ -2,27 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 
-client.on("ready", async  => {
-setInterval(function(){
-client.channels.find('id', '535144614487654401').setName("W");
-client.channels.find('id', '535144614487654401').setName("We");
-client.channels.find('id', '535144614487654401').setName("Wel");
-client.channels.find('id', '535144614487654401').setName("Welc");
-client.channels.find('id', '535144614487654401').setName("Welco");
-client.channels.find('id', '535144614487654401').setName("Welcom");
-client.channels.find('id', '535144614487654401').setName("Welcome");
-client.channels.find('id', '535144614487654401').setName("Welcome T");
-client.channels.find('id', '535144614487654401').setName("Welcome To");
-client.channels.find('id', '535144614487654401').setName("Welcome To S");
-client.channels.find('id', '535144614487654401').setName("Welcome To Se");
-client.channels.find('id', '535144614487654401').setName("Welcome To Ser");
-client.channels.find('id', '535144614487654401').setName("Welcome To Serv");
-client.channels.find('id', '535144614487654401').setName("Welcome To Serve");
-client.channels.find('id', '535144614487654401').setName("Welcome To Server");
-  }, 60000);
-});
-
-
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`M0nsters Bot Online ♥♥ *invite `,"https://www.twitch.tv/rashed1059")
@@ -926,6 +905,173 @@ client.on('message', message => {
                                    })
                                    }
 });
+
+
+
+var prefix = ("+")
+client.on('message',async message => { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+  if(message.content.startsWith(prefix + "js")) {
+ 
+if(!message.channel.guild) return message.reply(' '); /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+  let rank = message.guild.member(message.author).roles.find('name', '» support-codes','Support Team'); /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+  if (!rank) return message.channel.send('🛑 **| يجب ان تمتلك رتبة سبورت لأستخدام هذا الأمر.**');
+ 
+  let jscodes = message.guild.channels.find(`name`, "discord-js"); /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+  if(!jscodes) return message.channel.send("❌لم اجد الروم الخاص بنشر الاكواد");
+ 
+    let filter = m => m.author.id === message.author.id;
+ 
+    let thisMessage;
+ 
+    let thisFalse;
+ 
+    message.channel.send('📝 **| من فضلك اكتب الكود الأن... ✏ **').then(msg => {
+ 
+ 
+ 
+    message.channel.awaitMessages(filter, { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+      max: 1,
+ 
+      time: 90000,
+ 
+      errors: ['time']
+ 
+    })
+ 
+    .then(collected => {
+ 
+      collected.first().delete();
+ 
+      thisMessage = collected.first().content;
+ 
+      let boi;
+ 
+      msg.edit('📜 **| من فضلك اكتب وصف الكود الأن... ✏ **').then(msg => { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+ 
+ 
+          message.channel.awaitMessages(filter, { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+            max: 1,
+ 
+            time: 90000,
+ 
+            errors: ['time']
+ 
+          })
+ 
+          .then(collected => {
+ 
+            collected.first().delete();
+ 
+            boi = collected.first().content; /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+            let boi2;
+ 
+            msg.edit('🤵 **| من فضلك اكتب من صنع هذا الكود الأن... ✏ **').then(msg => { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+ 
+ 
+              message.channel.awaitMessages(filter, { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+                max: 1,
+ 
+                time: 90000,
+ 
+                errors: ['time']
+ 
+              })
+ 
+              .then(collected => {
+ 
+                collected.first().delete(); /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+              boi2 = collected.first().content;
+ 
+      msg.edit('🛡 **| [ هل انت متأكد من نشر الكود؟ | [ نعم ] او [ لا**');
+ 
+ message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
+ 
+        max: 1,
+ 
+        time: 90000,
+ 
+        errors: ['time'] /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+      })
+ 
+      .then(collected => {
+ 
+        if(collected.first().content === 'لا') {
+ 
+          msg.delete();
+ 
+          message.delete();
+ 
+          thisFalse = false;
+ 
+        }
+ 
+        if(collected.first().content === 'نعم') {
+ 
+          if(thisFalse === false) return;
+ 
+          msg.edit('🕊 **| Done ✅, تم بنجاح نشر كودك في روم الاكواد**'); /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+ 
+          collected.first().delete();
+ 
+          jscodes.send(`@everyone | @here /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+**Cloud © ⬇**
+\`\`\`css
+${thisMessage}\`\`\`
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+**وصف الكود**: ${boi}
+**تم النشر بواسطة**: ${message.author}
+**المصدر / الشخص الذي صنع الكود**: ${boi2}`);
+ 
+        }
+ 
+      }
+ 
+  );
+ 
+});
+ 
+    });
+ 
+  }
+ 
+    );
+ 
+  });
+
+
+}
+ 
+);
+ 
+    })}});
+
 
 
 client.login(process.env.BOT_TOKEN);
