@@ -908,7 +908,7 @@ client.on('message', message => {
 
 
 
-var prefix = ("+")
+var prefix = ("*")
 client.on('message',async message => { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
 
  
