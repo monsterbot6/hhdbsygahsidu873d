@@ -909,20 +909,19 @@ client.on('message', message => {
 
 
 var prefix = ("*")
-client.on('message',async message => { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+client.on('message',async message => { 
 
  
   if(message.content.startsWith(prefix + "js")) {
  
-if(!message.channel.guild) return message.reply(' '); /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+if(!message.channel.guild) return message.reply(' '); 
 
  
-  let rank = message.guild.member(message.author).roles.find('name', '» support-codes','Support Team'); /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
-
+  let rank = message.guild.member(message.author).roles.find('name', '» support-codes','Support Team'); 
  
   if (!rank) return message.channel.send('🛑 **| يجب ان تمتلك رتبة سبورت لأستخدام هذا الأمر.**');
  
-  let jscodes = message.guild.channels.find(`name`, "discord-js"); /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+  let jscodes = message.guild.channels.find(`name`, "discord-js"); 
 
  
   if(!jscodes) return message.channel.send("❌لم اجد الروم الخاص بنشر الاكواد");
@@ -937,7 +936,7 @@ if(!message.channel.guild) return message.reply(' '); /// ,Cloud‘//// YOUR NAM
  
  
  
-    message.channel.awaitMessages(filter, { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+    message.channel.awaitMessages(filter, { 
 
  
       max: 1,
@@ -956,12 +955,12 @@ if(!message.channel.guild) return message.reply(' '); /// ,Cloud‘//// YOUR NAM
  
       let boi;
  
-      msg.edit('📜 **| من فضلك اكتب وصف الكود الأن... ✏ **').then(msg => { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+      msg.edit('📜 **| من فضلك اكتب وصف الكود الأن... ✏ **').then(msg => { 
 
  
  
  
-          message.channel.awaitMessages(filter, { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+          message.channel.awaitMessages(filter, { 
 
  
             max: 1,
@@ -976,17 +975,16 @@ if(!message.channel.guild) return message.reply(' '); /// ,Cloud‘//// YOUR NAM
  
             collected.first().delete();
  
-            boi = collected.first().content; /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+            boi = collected.first().content; 
 
  
             let boi2;
  
-            msg.edit('🤵 **| من فضلك اكتب من صنع هذا الكود الأن... ✏ **').then(msg => { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
-
+            msg.edit('🤵 **| من فضلك اكتب من صنع هذا الكود الأن... ✏ **').then(msg => { 
  
  
  
-              message.channel.awaitMessages(filter, { /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+              message.channel.awaitMessages(filter, { 
 
  
                 max: 1,
@@ -999,7 +997,7 @@ if(!message.channel.guild) return message.reply(' '); /// ,Cloud‘//// YOUR NAM
  
               .then(collected => {
  
-                collected.first().delete(); /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+                collected.first().delete(); 
 
  
               boi2 = collected.first().content;
@@ -1012,7 +1010,7 @@ if(!message.channel.guild) return message.reply(' '); /// ,Cloud‘//// YOUR NAM
  
         time: 90000,
  
-        errors: ['time'] /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+        errors: ['time'] 
 
  
       })
@@ -1033,12 +1031,11 @@ if(!message.channel.guild) return message.reply(' '); /// ,Cloud‘//// YOUR NAM
  
           if(thisFalse === false) return;
  
-          msg.edit('🕊 **| Done ✅, تم بنجاح نشر كودك في روم الاكواد**'); /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
-
+          msg.edit('🕊 **| Done ✅, تم بنجاح نشر كودك في روم الاكواد**'); 
  
           collected.first().delete();
  
-          jscodes.send(`@everyone | @here /// ,Cloud‘//// YOUR NAME/////https://discord.gg/Sb4UuPB
+          jscodes.send(`@everyone | @here 
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 **Cloud © ⬇**
