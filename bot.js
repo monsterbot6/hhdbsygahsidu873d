@@ -1038,7 +1038,7 @@ if(!message.channel.guild) return message.reply(' ');
           jscodes.send(`@everyone | @here 
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-**Cloud © ⬇**
+**M0nster © ⬇**
 \`\`\`css
 ${thisMessage}\`\`\`
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
