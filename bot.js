@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`M0nsters Bot Online ♥♥ *invite `,"https://www.twitch.tv/rashed1059")
+client.user.setGame(`Great Bot Online ♥♥ *invite `,"https://www.twitch.tv/rashed1059")
   console.log('')
   console.log('')
   console.log('?[?????????????????????????????????????????????????????????????????]?')
@@ -34,8 +34,8 @@ client.on("message", message => {
  if (message.content === "*invite") {
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .setFooter('M0nsters B0T: جميع الحقوق محفوظة 2018 لــبوت')  
-      .addField('Bot Link', `  https://discordapp.com/api/oauth2/authorize?client_id=526809419309252612&permissions=8&scope=bot  `)
+      .setFooter('Great B0T: جميع الحقوق محفوظة 2018 لــبوت')  
+      .addField('Bot Link', `  https://discordapp.com/api/oauth2/authorize?client_id=590236946878562506&permissions=8&scope=bot  `)
   message.author.send({embed});
 
  }
@@ -66,21 +66,6 @@ client.on("message", message => {
   
   
   
-  client.on('message', function(message) {
-    if (message.channel.type === "dm") {
-        if (message.author.id === client.user.id) return;
-        var iiMo = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setTimestamp()
-        .setTitle('``I have received a new MESSAGE !``')
-        .setThumbnail(`${message.author.avatarURL}`)
-        .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
-        .setFooter(`From **${message.author.tag} (${message.author.id})**`)
-    client.channels.get("526816960294551577").send({embed:iiMo});
-    }
-});
-
-
 var prefix = "*";
 var cats = [
 
@@ -866,48 +851,6 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 
 
 
-
-
-
-
-
-client.on('guildMemberAdd', (member) => {
-member.addRole(member.guild.roles.find('name', 'not active'));
-});
-
-
-client.on('message', message => {
-    if(!message.channel.guild) return;
-       if(message.content.startsWith('*' + 'active')) {
-        let modlog = client.channels.find('name', 'active');
-        if (!message.content.startsWith("+")) return;
-       if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-       message.channel.sendMessage(`اضغط على الصح عشان تتفعل`).then(msg => {
-
-
-        msg.react('✅')
-       .then(() => msg.react('✅'))
-
-
-
-       let activeFilter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
-
-       let active = msg.createReactionCollector(activeFilter, { time: 15000 });
-
-
-                               active.on("collect", r => {
-                                   message.member.addRole(message.guild.roles.find("name", "active"));
-                                   message.member.removeRole(message.guild.roles.find("name", "not active"));
-                                   msg.delete();
-                                   message.channel.send(`**تم تفعيلك استمتع.**`).then(m => m.delete(1000));
-
-                                   })
-                                   })
-                                   }
-});
-
-
-
 var prefix = ("*")
 client.on('message',async message => { 
 
@@ -1038,7 +981,7 @@ if(!message.channel.guild) return message.reply(' ');
           jscodes.send(`@everyone | @here 
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-**M0nster © ⬇**
+**Great © ⬇**
 \`\`\`css
 ${thisMessage}\`\`\`
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
