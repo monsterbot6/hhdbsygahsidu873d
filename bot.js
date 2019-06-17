@@ -29,6 +29,23 @@ client.user.setGame(`Great Bot Online ♥♥ *invite `,"https://www.twitch.tv/ra
 });
 
 
+  var prefix = "*";
+
+  client.on("message", message => {
+  
+              if (message.content.startsWith(prefix + "bcc")) {
+                           if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+    let args = message.content.split(" ").slice(1);
+    var argresult = args.join(' '); 
+    message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
+   m.send(`${argresult}\n ${m}`);
+  })
+   message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` :mailbox:  عدد المستلمين `); 
+   message.delete(); 
+  };     
+  });
+
+
 
 client.on("message", message => {
  if (message.content === "*invite") {
