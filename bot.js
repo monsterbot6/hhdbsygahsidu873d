@@ -115,7 +115,7 @@ client.on('message',async message => {
           if(collected.first().content === number) {
             m.delete();
             collected.first().delete();
-            credits[mentionn.id].credits += (*daily);
+            credits[mentionn.id].credits += (daily);
             fs.writeFile(path, JSON.stringify(credits, null, 5), function(err) {if(err) console.log(err)});
  
           message.channel.send(`**:atm: | \`${daily}\`, you received your :yen:**`);  
@@ -126,7 +126,7 @@ client.on('message',async message => {
         });
       });
     } else if(!mentionn) {
-      credits[author].credits += (*daily);
+      credits[author].credits += (daily);
       fs.writeFile(path, JSON.stringify(credits, null, 5), function(err) {if(err) console.log(err)});
  
       message.channel.send(`**:atm: | , you received your :yen: \`${daily}\` daily credits! **`);
